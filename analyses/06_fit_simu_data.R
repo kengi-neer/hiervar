@@ -6,6 +6,8 @@
 rm(list = ls())
 options(stringsAsFactors = FALSE)
 
+# Set working directory to analyses folder
+
 #stan
 library(rstan)
 rstan_options(auto_write = TRUE)
@@ -223,13 +225,10 @@ priors <- list(
 
 prior_set_name <- c("main_wide", "alternative_narrow")
 
-# source('source/model_fxs.R')
-# source('source/proj_fxs.R')
-
 #sites and varieties to work on
 sites <- c("Bellay", "Bergheim", "Lafite", "Vassal")
-vars <- c('Aramon', 'Cabernet-Sauvignon', 'Carignan', 'Chardonnay', 'Chasselas',
-          'Grenache', 'Merlot', 'Pinot noir', 'Sauvignon', 'Syrah', 'Ugni Blanc')
+vars <- c('Cabernet-Sauvignon', 'Chardonnay', 'Chasselas', 'Grenache',
+          'Merlot', 'Pinot noir', 'Sauvignon', 'Syrah', 'Ugni Blanc')
 
 #retrieve and format data
 temp_data <- read.csv("output/formatted_data/simu_temp_data.csv", header = TRUE)

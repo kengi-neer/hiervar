@@ -6,6 +6,8 @@
 rm(list = ls())
 options(stringsAsFactors = FALSE)
 
+# Set working directory to analyses folder
+
 library(sf)
 library(terra)
 

@@ -6,17 +6,11 @@
 rm(list = ls())
 options(stringsAsFactors = FALSE)
 
-# Setting working directory... 
-if(length(grep("lizzie", getwd()) > 0)) { 
-  setwd("~/Documents/git/projects/vinmisc/survin/analyses")
-  par(family="serif")
-} else if(length(grep("Ken", getwd()) > 0)){
-  setwd("/Users/Ken Michiko Samson/Documents/Temporal Ecology Lab/hierver/analyses")
-}
+# Set working directory to analyses folder
 
 # read data
-tempo_data <- read.csv2("../data/common_variables.csv", header = TRUE)
-vassal_data <- read.csv("../data/fromvassal_phenology.csv", header = TRUE, fileEncoding = "latin1")
+tempo_data <- read.csv2("input/common_variables.csv", header = TRUE)
+vassal_data <- read.csv("intput/fromvassal_phenology.csv", header = TRUE, fileEncoding = "latin1")
 vassal_data <- subset(vassal_data, !is.na(doy_flo) & !is.na(doy_ver) & doy_flo < doy_ver,
                select = c("variety", "accession_ID", "year", "doy_flo", "doy_ver"))
 names(vassal_data) <- c("variety", "clone", "year", "flo", "ver")

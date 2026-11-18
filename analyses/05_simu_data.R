@@ -6,6 +6,11 @@
 rm(list = ls())
 options(stringsAsFactors = FALSE)
 
+# Set working directory to analyses folder
+
+library(logitnorm)
+
+# Model parameters from Morales-Castilla et al. (2020)
 phen_params <- as.data.frame(array(NA, dim = c(12, 18)))
 colnames(phen_params) <- c('variety', 'su_t1', 'su_topt', 'su_t2', 'su_c_min', 'c_bb',
                            'we_bb_tmin', 'we_bb_topt', 'we_bb_tmax', 'f_bb',

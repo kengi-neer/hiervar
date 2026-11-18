@@ -6,6 +6,8 @@
 rm(list = ls())
 options(stringsAsFactors = FALSE)
 
+# Set working directory to analyses folder
+
 #stan
 library(rstan)
 rstan_options(auto_write = TRUE)
@@ -222,9 +224,6 @@ priors <- list(
 )
 
 prior_set_name <- c("main_wide", "alternative_narrow")
-
-# source('source/model_fxs.R')
-# source('source/proj_fxs.R')
 
 #sites and varieties to work on
 sites <- c("Bellay", "Bergheim", "Lafite", "Vassal")
